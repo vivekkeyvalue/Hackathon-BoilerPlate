@@ -1,5 +1,5 @@
-import Button from 'components/button/Button';
-import { ButtonType } from 'components/button/types';
+// import Button from 'components/button/Button';
+// import { ButtonType } from 'components/button/types';
 import { FC } from 'react';
 import { RequestDetails } from 'types';
 
@@ -19,14 +19,16 @@ const RequestSummary: FC<RequestSummaryProps> = ({ onClose }) => {
         <img src='icons/close-icon.svg' alt='Close icon' />
       </div>
       <div className='px-[21px] flex flex-col pt-[24px] justify-start'>
-        <div className='text-4xl text-[#3E8C31] font-bold flex justify-start align-middle text-center'>
+        <div className='text-4xl text-blue-800 font-bold flex justify-start align-middle text-center'>
           <div>Destination: Munar</div>
         </div>
         <div className='text-sm text-[black] flex flex-col mt-8'>
           <div>PickUp : Kochi</div>
           <div>Amount : Rs.25000</div>
           <div className='mt-4'>
-            <Button type={ButtonType.BLUE}>Upload pdf</Button>
+            {/* <Button type={ButtonType.BLUE}> */}
+            <input type='file' />
+            {/* </Button> */}
           </div>
         </div>
       </div>
