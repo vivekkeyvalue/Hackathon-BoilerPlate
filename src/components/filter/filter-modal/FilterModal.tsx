@@ -5,7 +5,6 @@ import { DateRange } from 'react-date-range';
 import StatusPicker from 'components/status-picker/StatusPicker';
 import { FilterTabs, FilterText, StatusPickerCell } from 'types';
 import { FilterOptions } from 'constants/filterOptions';
-import { ZAMP_LOGO } from 'constants/icons';
 
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
