@@ -3,14 +3,14 @@ import { RequestDetails } from 'types';
 
 import './style.css';
 
-interface TransactionSummaryProps {
+interface RequestSummaryProps {
   toAddressName?: string;
   onRefundClick?: () => void;
   onClose?: () => void;
   selectedRow?: RequestDetails;
 }
 
-const TransactionSummary: FC<TransactionSummaryProps> = ({ selectedRow, onClose }) => {
+const RequestSummary: FC<RequestSummaryProps> = ({ selectedRow, onClose }) => {
 
   return (
     <div className={`rounded-[16px] shadow-lg p-[18px] w-[493px] relative bg-white simple_animation`}>
@@ -26,4 +26,4 @@ const TransactionSummary: FC<TransactionSummaryProps> = ({ selectedRow, onClose 
   );
 };
 
-export default TransactionSummary;
+export default RequestSummary;

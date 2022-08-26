@@ -6,9 +6,8 @@ import Filter from 'components/filter/Filter';
 import { Table } from 'components';
 import { ButtonType } from 'components/button/types';
 import { PaymentStatus, StatusPickerCell, RequestDetails } from 'types';
-import { refundTableHeaders, txnTableHeaders } from 'constants/table';
-import TransactionSummary from 'components/transcation-summary/TransactionSummary';
-// import TransactionSummary from 'components/transcation-summary/TransactionSummary';
+import RequestSummary from 'components/request-summary/RequestSummary';
+import { newRequestTableHeaders, respondedTableHeaders } from 'constants/table';
 
 
 const Home: FC = () => {
@@ -28,10 +27,10 @@ const Home: FC = () => {
 
 
   const convertedTransactionData = [{ id: 'probo_jXkRwWECvZcWGFqyGvFNeP_08_25', date: '35-10-2020', amount: '25000', destination: 'Moonar' }, { id: 'probo_jXkRwWECvZcdfdsfsdfsdf', date: '3-10-2020', amount: '55000', destination: 'Kodai' }];
-  const convertRefundsData = [{ id: 'probo_jXkRwWECvZcWGFqyGvFNeP_08_25', reference_id: 'probo_12345678', merchant_id: 'probo_9GtnphjB6rbcvwb7eP5xid_05_27', payment_session_id: 'probo_ABTxG4Yqy54RMdsZhrKMzi_08_25', status: 'expired' }, { id: 'probo_JunCa8dUoHqiGQgjHuVeP9_08_25', reference_id: 'probo_12345678', merchant_id: 'probo_9GtnphjB6rbcvwb7eP5xid_05_27', payment_session_id: 'probo_JJDAtyvZJbCFcFMhz6oRoH_08_25', status: 'expired' }];
+  const convertRefundsData = [{ id: 'probo_jXkRwWECvZcWGFqyGvFNeP_08_25', date: '35-10-2020', amount: '25000', destination: 'Moonar' }, { id: 'probo_jXkRwWECvZcdfdsfsdfsdf', date: '3-10-2020', amount: '55000', destination: 'Kodai' }];
 
   const getTableData = (activeTab) => (activeTab === 1 ? convertedTransactionData : convertRefundsData);
-  const getTableHeaders = (activeTab) => (activeTab === 1 ? txnTableHeaders : refundTableHeaders);
+  const getTableHeaders = (activeTab) => (activeTab === 1 ? newRequestTableHeaders : respondedTableHeaders);
 
 
   const clearFilter = () => {
@@ -82,17 +81,6 @@ const Home: FC = () => {
               type={ButtonType.CUSTOM}
               className={`text-base ${
                 activeTab === 2 && 'text-[#1E3A8A] font-semibold border-b-2 border-[#1E3A8A] rounded-none'
-              }`}
-            >
-              Responded
-            </Button>
-          </li>
-          <li className='mr-2'>
-            <Button
-              onClick={() => setActiveTab(3)}
-              type={ButtonType.CUSTOM}
-              className={`text-base ${
-                activeTab === 3 && 'text-[#1E3A8A] font-semibold border-b-2 border-[#1E3A8A] rounded-none'
               }`}
             >
               Accepted
@@ -160,7 +148,7 @@ const Home: FC = () => {
             showTransactionSummary && activeTab === 1 ? 'transaction-summary-visible' : 'transaction-summary-hide'
           } absolute right-0 top-0`}
         >
-          <TransactionSummary
+          <RequestSummary
             onRefundClick={() => console.log('refund clicked')}
             onClose={() => {
               setShowTransactionSummary(false);

@@ -1,4 +1,4 @@
-const txnTableHeaders = [
+const newRequestTableHeaders = [
   {
     label: 'Date & Time',
     value: 'date',
@@ -22,28 +22,28 @@ const txnTableHeaders = [
   }
 ];
 
-const refundTableHeaders = [
+const respondedTableHeaders = [
   {
     label: 'Date & Time',
     value: 'date',
     type: 'date',
-    width: '18%'
+    width: '25%'
   },
   {
-    label: 'ID',
+    label: 'Id',
     value: 'id',
-    width: '30%'
+    width: '25%'
   },
   {
-    label: 'Ref.ID',
-    value: 'reference_id',
-    width: '20%'
+    label: 'Destination',
+    value: 'destination',
+    width: '25%'
   },
   {
     label: 'Amount',
     value: 'amount',
-    width: '17%'
+    width: '25%'
   }
 ];
 
-export { txnTableHeaders, refundTableHeaders };
+export { newRequestTableHeaders, respondedTableHeaders };
